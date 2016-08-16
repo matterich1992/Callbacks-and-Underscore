@@ -27,3 +27,18 @@ results.push(callback(val));
 });
 return results;
 }
+
+
+var filter = function(arg, callback){ 
+var results = [];
+  each(arg, function(val){
+	 if(callback(val)){
+		results.push(val);	
+		}
+	});
+return results;
+}
+
+
+
+
