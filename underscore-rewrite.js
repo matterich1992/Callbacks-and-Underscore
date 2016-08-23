@@ -41,4 +41,17 @@ return results;
 
 
 
+var reduce = function(arr, callback, accumulator){
+	each(arr, function(val){
+		if(accumulator===undefined){
+			accumulator=val;
+		
+		} else {
+			accumulator= callback(val, accumulator);
+		}
+
+	});
+return accumulator;
+}
+
 
