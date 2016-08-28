@@ -18,7 +18,8 @@ if(Array.isArray(arr)){		// this portion addresses that if the arg is an array, 
   } 
 }
 
-
+//Goes through an array or an object using the each funtion and manipulates the array in some way
+//I.E - multiply each array num by a certain amount
 
 var map = function(arg, callback){
 var results = [];
@@ -28,6 +29,7 @@ results.push(callback(val));
 return results;
 }
 
+//Filters out functions based on a certain"filter" callback that is applied and provides a new array meeting that criteria
 
 var filter = function(arg, callback){ 
 var results = [];
@@ -54,5 +56,30 @@ var reduce = function(arr, callback, accumulator){
 return accumulator;
 }
 
+//Identity
+// returns the argument passed into the function
+var identity = function(arg){
+	return arg;
+}
+
+//First
+//Returns the first n elements of an array, if undefined then it returns the first value
+
+var first = function(array, n){
+	if(n===undefined){
+		return array[0];
+	} else {
+		return array.slice(0,n);
+	}
+};
 
 
+//Last is just like first but for the last element
+
+var last = function(array, n){
+	if(n===undefined){
+		return array[array.length-1];
+	} else {
+		return array.slice(Math.max(0,array.length-1));
+	}
+}
