@@ -83,3 +83,18 @@ var last = function(array, n){
 		return array.slice(Math.max(0,array.length-1));
 	}
 }
+
+
+//indexOf
+// returns index of which value can be found or if value is not present then returns -1
+
+var indexOf = function(array,target){
+	var result = -1;
+each(array, function(item, index){
+	if(item===target && result===-1){
+		result = index;
+	}
+});	
+return result;
+}
+
