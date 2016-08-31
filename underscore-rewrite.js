@@ -87,7 +87,7 @@ var last = function(array, n){
 
 //indexOf
 // returns index of which value can be found or if value is not present then returns -1
-
+// returns the index at which target can be found in an array
 var indexOf = function(array,target){
 	var result = -1;
 each(array, function(item, index){
