@@ -98,3 +98,29 @@ each(array, function(item, index){
 return result;
 }
 
+
+//reject - this function is like filter but does th opposite
+//This version uses filter, already implemented aboved.
+function reject (collection, callback){
+
+	return _.filter(collection,function(val){
+	return	!callback(val);
+	});
+}
+
+
+//This would be a more standard version using _.each
+//
+function reject(collection,callback){
+var results = [];
+_.each(collection, function(val){
+	if(!callback(val)){
+		results.push(val);
+	}
+});
+return results;
+}
+
+
+reject([1,2,3,4,5,6,7,8], function(a){return a%2===0});
+
